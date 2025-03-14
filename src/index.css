@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Stile generale */
+body {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #f4e7d1;
+  color: #4a3f35;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 15px;
+  background-color: #8c593b;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  width: 80%;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #f4e7d1;
+}
+
+/* Titoli */
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Pulsanti */
+button {
+  background-color: #c48c46;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #a87438;
+  transform: scale(1.05);
+}
+
+/* Input */
+input {
+  padding: 12px;
+  margin: 5px;
+  border: 1px solid #8c593b;
+  border-radius: 8px;
+  font-size: 16px;
+  width: 250px;
+}
+
+/* Contenitori centrati */
+.container {
+  max-width: 600px;
+  background-color: #fff8e7;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
