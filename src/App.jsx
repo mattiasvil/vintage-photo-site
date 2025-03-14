@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
 
 function LoginPage({ setUser }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // Per reindirizzare dopo il login
 
   const handleLogin = () => {
+    console.log('Tentativo di login...'); // Debug
     if (username === 'admin' && password === 'password123') {
       const user = { username, premium: false };
-      localStorage.setItem('user', JSON.stringify(user)); // Salva l'utente nel browser
+      localStorage.setItem('user', JSON.stringify(user)); // Salva l'utente
       setUser(user);
+      navigate('/premium'); // Reindirizza
     } else {
       setError('Credenziali non valide');
+      console.log('Login fallito'); // Debug
     }
   };
 
@@ -41,6 +45,7 @@ export default function App() {
 
   useEffect(() => {
     const savedUser = localStorage.getItem('user');
+    console.log('Utente salvato:', savedUser); // Debug
     if (savedUser) {
       setUser(JSON.parse(savedUser));
     }
